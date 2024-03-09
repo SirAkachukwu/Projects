@@ -1,0 +1,167 @@
+
+using System;
+using System.Collections.Generic;
+
+//EXERCISE 1A - (ALPHA)
+
+namespace Alpha
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arrayY1 = { 2, 3, 0, 1, 7 };
+            int[] arrayY2 = { 3, 3, 3, 5, 18, 6, 20 };
+            int[] arrayY3 = { 4, 6, 2, 6, 7, 7 };
+
+            Console.WriteLine(noOfElements(arrayY1, 4, 8));
+            Console.WriteLine(noOfElements(arrayY2, 15, 30));
+            Console.WriteLine(noOfElements(arrayY3, 0, 7));
+
+        }
+
+        static int noOfElements(int[] Y, int X, int Z)
+        {
+            int count = 0;
+
+            foreach (int element in Y)
+            {
+                if (element >= X && element <= Z)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+
+    }
+}
+
+
+
+
+//  EXERCISE 1B - (BETA)
+
+namespace Beta
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arrayA1 = { 2, 3, 12, 18, 42, 24 };
+            int[] arrayA2 = { 100, 84, 37 };
+            int[] arrayA3 = { 5, 8, 6, 12 };
+
+            Console.WriteLine(NumOfElement(arrayA1));
+            Console.WriteLine(NumOfElement(arrayA2));
+            Console.WriteLine(NumOfElement(arrayA3));
+
+        }
+
+        static int NumOfElement(int[] A)
+        {
+            int count = 0;
+
+            foreach (int element in A)
+            {
+                if (element % 2 == 0 && element > 15)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+    }
+
+}
+
+
+
+
+
+
+      //EXERCISE 1C - (GAMMA)
+namespace Gamma
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array1 = { 1, 3, 5, 6, 3, 6, 7, 4 };
+            int[] array2 = { 21, 3, 5, 6, 3, 6, 7, 4 };
+
+            Console.WriteLine(string.Join(",", isDivisibleByN(array1, 2)));
+            Console.WriteLine(string.Join(",", isDivisibleByN(array2, 7)));
+
+        }
+
+        static int[] isDivisibleByN(int[] arr, int n)
+        {
+            List<int> result = new List<int>();
+
+            foreach (int element in arr)
+            {
+                if (element % n == 0)
+                {
+                    result.Add(element);
+                }
+            }
+
+            return result.ToArray();
+        }
+
+    }
+}
+
+
+
+    //EXERCISE 1D - (MIG)
+namespace Mig
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array1 = { 2, 5, 1, 0, 5, 7 };
+            int[] array2 = { 2, 3, 5, 6, 2, 1 };
+
+            Console.WriteLine(highestSum(array1, array2)); // Output: 20
+
+            int[] array3 = { 15, 7 };
+            int[] array4 = { 12, 17 };
+
+            Console.WriteLine(highestSum(array3, array4)); // Output: 29
+
+            int[] array5 = { 30 };
+            int[] array6 = { 3, 6, 2, 6 };
+
+            Console.WriteLine(highestSum(array5, array6)); // Output: 30
+        }
+
+        static int highestSum(int[] array1, int[] array2)
+        {
+            int sum1 = CalculateSum(array1);
+            int sum2 = CalculateSum(array2);
+
+            return Math.Max(sum1, sum2);
+        }
+
+        static int CalculateSum(int[] array)
+        {
+            int sum = 0;
+
+            foreach (int element in array)
+            {
+                sum += element;
+            }
+
+            return sum;
+        }
+    }
+ }
+
+
